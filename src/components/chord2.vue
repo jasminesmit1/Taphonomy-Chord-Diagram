@@ -1,7 +1,10 @@
 <template>
     <div class="chart">
         <h1>{{ msg }}</h1>
-<!--        {{matrix}}-->
+        <div class="container" id="chart1">
+        </div>
+        <div class="container" id="chart2">
+        </div>
     </div>
 </template>
 
@@ -138,7 +141,7 @@
                 var innerRadius = width / 2 * 0.7;
                 var outerRadius = innerRadius * 1.1;
 
-                var tooltip = d3.select("svg")
+                var tooltip = d3.select("#chart2")
                     .append("div")
                     .style("opacity", 0)
                     .attr("class", "tooltip")
@@ -149,11 +152,12 @@
                     .style("padding", "10px")
 
                 //add element
-                var svg = d3.select(".chart")
+                var svg = d3.select("#chart1")
                     .append("svg")
-                    .attr("viewBox", "-20 -20 800 800")
+                    .attr("viewBox", "-20 40 900 900")
                     .attr("width", width)
                     .attr("height", height);
+
 
                 //draw nodes
                 var outer_arc = d3.arc()
@@ -285,5 +289,8 @@
 </script>
 
 <style scoped>
+    .container {
+        float: left;
+    }
 
 </style>
