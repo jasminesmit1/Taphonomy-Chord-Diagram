@@ -2,7 +2,7 @@
 
 A visualization project showing taphonomy connections between skeletal elements
 
-![Screenshot](taph_chord_diagram.png)
+![Taph Chord](src/assets/taph_chord.png)
 
 ## Project setup
 ```
