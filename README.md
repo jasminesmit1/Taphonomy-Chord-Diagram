@@ -3,6 +3,9 @@
 A visualization project showing taphonomy connections between skeletal elements
 
 
+![Taph Chord](src/assets/taph_chord.png)
+
+
 ## Project setup
 ```
 npm install
