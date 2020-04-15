@@ -1,8 +1,9 @@
 <template>
-    <div class="chart">
+    <div>
         <h1>{{ msg }}</h1>
         <div class="container" id="chart1">
         </div>
+        <canvas>{{taphonomies}}</canvas>
         <div class="container" id="chart2">
         </div>
     </div>
@@ -136,10 +137,19 @@
                     .padAngle(0.03)
                     .sortSubgroups(d3.descending);
 
-                var width = 800;
-                var height = 800;
+                var width = 700;
+                var height = 700;
                 var innerRadius = width / 2 * 0.7;
                 var outerRadius = innerRadius * 1.1;
+
+
+
+                //add element
+                var svg = d3.select("#chart1")
+                    .append("svg")
+                    .attr("viewBox", "-20 40 900 900")
+                    .attr("width", width)
+                    .attr("height", height);
 
                 var tooltip = d3.select("#chart2")
                     .append("div")
@@ -150,13 +160,6 @@
                     .style("border-width", "1px")
                     .style("border-radius", "5px")
                     .style("padding", "10px")
-
-                //add element
-                var svg = d3.select("#chart1")
-                    .append("svg")
-                    .attr("viewBox", "-20 40 900 900")
-                    .attr("width", width)
-                    .attr("height", height);
 
 
                 //draw nodes
@@ -207,7 +210,7 @@
                 //add chord
                 var inner_chord = d3.ribbon()
                     .radius(innerRadius);
-                // var taph = this.taphonomies;
+
 
                 g_outer.append("g")
                     .attr("class", "ribbons")
