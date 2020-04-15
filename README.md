@@ -1,4 +1,6 @@
-# untitled
+# Taphonomy Chord Diagram
+
+A visualization project showing taphonomy connections between skeletal elements
 
 ## Project setup
 ```
@@ -23,6 +25,11 @@ npm run test
 ### Lints and fixes files
 ```
 npm run lint
+```
+
+### Install D3.js
+```
+nnpm install --save d3
 ```
 
 ### Customize configuration
